@@ -1,0 +1,5 @@
+Simple experiment base on Loren Segal tutorial about creating a new languague with Bison, Flex, and LLVM
+http://gnuu.org/2009/09/18/writing-your-own-toy-compiler/all/1/
+
+Original project can be found here
+https://github.com/lsegal/my_toy_compiler
