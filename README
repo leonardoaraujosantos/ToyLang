@@ -5,7 +5,9 @@ Original project can be found here
 https://github.com/lsegal/my_toy_compiler
 
 Directory structure
-docs: LLVM tutorial and presentation, AST UML, doxygen, etc...
+docs:	LLVM tutorial and presentation, AST UML, doxygen, etc...
+src:	Source code
+
 
 
 Ps: Some information on using git through proxys
