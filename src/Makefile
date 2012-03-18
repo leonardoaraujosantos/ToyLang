@@ -14,9 +14,9 @@ parser_scanner:	scanner.l parser.y
 	bison -d -o parser.gen.cpp parser.y
 	flex -o scanner.gen.cpp scanner.l
 	
-# Build our toyCompiler ($@ means the target)
-toyLang: main.cpp
-	g++ -o $@ parser.gen.cpp scanner.gen.cpp main.cpp
+# Build our toyCompiler ($@ means the target, and $^ means the dependencies)
+toyLang: parser.gen.cpp scanner.gen.cpp main.cpp
+	g++ -o $@ $^
 
 doc:
 	doxygen docs/doxygen.conf
