@@ -101,7 +101,7 @@ func_decl_args : /*blank*/ 										{ $$ = new std::vector<NVariableDeclaration
 | func_decl_args TCOMMA var_decl 								{ $1->push_back($<var_decl>3); }
 ;
 
-ident : TIDENTIFIER 											{ $$ = new NIdentifier(*$1); delete $1; }
+ident : TIDENTIFIER 											{ printf("Ident\n"); $$ = new NIdentifier(*$1); delete $1; }
 ;
 
 numeric : TINTEGER 												{ $$ = new NInteger(atol($1->c_str())); delete $1; }

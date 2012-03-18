@@ -9,6 +9,7 @@
 #define NEXPRESSIONSTATEMENT_H_
 
 #include "NStatement.hpp"
+#include "NExpression.hpp"
 
 class NExpressionStatement: public NStatement {
 public:

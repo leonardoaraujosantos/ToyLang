@@ -8,6 +8,8 @@
 #define NVARIABLEDECLARATION_HPP_
 
 #include "NStatement.hpp"
+#include "NIdentifier.hpp"
+#include "NExpression.hpp"
 
 class NVariableDeclaration: public NStatement {
 public:

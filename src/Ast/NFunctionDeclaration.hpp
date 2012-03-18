@@ -12,6 +12,7 @@
 #include "NStatement.hpp"
 #include "NIdentifier.hpp"
 #include "NVariableDeclaration.hpp"
+#include "NBlock.hpp"
 
 class NFunctionDeclaration: public NStatement {
 public:
