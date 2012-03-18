@@ -18,7 +18,7 @@ public:
 	/*
 	 * Constructor (wich will initialize our value variable)
 	 */
-	NIdentifier (const std::string& value) : name(name){};
+	NIdentifier (const std::string& name) : name(name){};
 
 	/*
 	 * We will override the codeGen method to emit valid LLVM IR code for identifiers
