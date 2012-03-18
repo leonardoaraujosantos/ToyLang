@@ -23,7 +23,7 @@ public:
 	/*
 	 * Overrided to emit proper LLVM IR code.
 	 */
-	virtual llvm::Value* codeGen(CodeGenContext& context);
+	//virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NBLOCK_HPP_ */

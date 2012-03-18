@@ -6,7 +6,14 @@
  */
 
 #include <iostream>
+
+// Include headers of ast
 #include "Ast/Node.hpp"
+#include "Ast/NBlock.hpp"
+#include "Ast/NStatement.hpp"
+#include "Ast/NExpression.hpp"
+#include "Ast/NIdentifier.hpp"
+#include "Ast/NVariableDeclaration.hpp"
 
 extern NBlock* programBlock;
 extern int yyparse();

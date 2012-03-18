@@ -40,7 +40,7 @@ public:
 	/*
 	 * Emit LLVM IR variable declaration
 	 */
-	virtual llvm::Value* codeGen(CodeGenContext& context);
+	//virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NVARIABLEDECLARATION_HPP_ */

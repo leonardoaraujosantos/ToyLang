@@ -7,12 +7,15 @@ LDFLAGS = `llvm-config --ldflags`
 CPPFLAGS = `llvm-config --cppflags $(LLVM_MODULES)`
 
 # Build all components
-all:	toyLang
+all:	parser_scanner toyLang
 
 # Ask flex and bison to create our parser and scanner
 parser_scanner:	scanner.l parser.y
 	bison -d -o parser.gen.cpp parser.y
 	flex -o scanner.gen.cpp scanner.l
+	
+toyLang: main.cpp
+	g++ -o toyLang parser.gen.cpp scanner.gen.cpp main.cpp
 
 
 doc:

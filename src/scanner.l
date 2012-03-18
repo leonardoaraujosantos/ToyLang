@@ -4,8 +4,15 @@
 
 %{
 #include <string>
-#include "node.h"
-#include "parser.hpp"
+
+#include "Ast/Node.hpp"
+#include "Ast/NBlock.hpp"
+#include "Ast/NStatement.hpp"
+#include "Ast/NExpression.hpp"
+#include "Ast/NIdentifier.hpp"
+#include "Ast/NVariableDeclaration.hpp"
+
+#include "parser.gen.hpp"
 
 // Different ways to set the token value (yytext contains the matched text)
 #define SAVE_TOKEN yylval.string = new std::string(yytext, yyleng)
@@ -14,9 +21,8 @@
 extern "C" int yywrap() { }
 %}
 
+/* Regexp definition of each token*/
 %%
-// Regexp definition of each token
-
 [ \t\n] ;
 [a-zA-Z_][a-zA-Z0-9_]* 		SAVE_TOKEN; return TIDENTIFIER;
 [0-9]+\.[0-9]* 				SAVE_TOKEN; return TDOUBLE;

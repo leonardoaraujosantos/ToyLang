@@ -27,7 +27,7 @@ public:
 	/*
 	 * Override to emmit LLVM IR assign operations
 	 */
-	virtual llvm::Value* codeGen(CodeGenContext& context);
+	//virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NASSIGNMENT_HPP_ */

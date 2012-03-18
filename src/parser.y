@@ -1,7 +1,20 @@
 %{
-#include "ast/node.h"
 #include <cstdio>
 #include <cstdlib>
+
+#include "Ast/Node.hpp"
+#include "Ast/NBlock.hpp"
+#include "Ast/NStatement.hpp"
+#include "Ast/NExpressionStatement.hpp"
+#include "Ast/NFunctionDeclaration.hpp"
+#include "Ast/NInteger.hpp"
+#include "Ast/NDouble.hpp"
+#include "Ast/NAssignment.hpp"
+#include "Ast/NMethodCall.hpp"
+#include "Ast/NBinaryOperator.hpp"
+#include "Ast/NExpression.hpp"
+#include "Ast/NIdentifier.hpp"
+#include "Ast/NVariableDeclaration.hpp"
 
 /* the top level root node of our final AST */
 NBlock *programBlock;
@@ -83,8 +96,8 @@ var_decl : ident ident 											{ $$ = new NVariableDeclaration(*$1, *$2); }
 func_decl : ident ident TLPAREN func_decl_args TRPAREN block	{ $$ = new NFunctionDeclaration(*$1, *$2, *$4, *$6); delete $4; }
 ;
 
-func_decl_args : /*blank*/ 										{ $$ = new VariableList(); }
-| var_decl 														{ $$ = new VariableList(); $$->push_back($<var_decl>1); }
+func_decl_args : /*blank*/ 										{ $$ = new std::vector<NVariableDeclaration*>(); }
+| var_decl 														{ $$ = new std::vector<NVariableDeclaration*>(); $$->push_back($<var_decl>1); }
 | func_decl_args TCOMMA var_decl 								{ $1->push_back($<var_decl>3); }
 ;
 
@@ -103,8 +116,8 @@ expr : ident TEQUAL expr 										{ $$ = new NAssignment(*$<ident>1, *$3); }
      | TLPAREN expr TRPAREN 									{ $$ = $2; }
 ;
 
-call_args : /*blank*/ 											{ $$ = new ExpressionList(); }
-| expr 															{ $$ = new ExpressionList(); $$->push_back($1); }
+call_args : /*blank*/ 											{ $$ = new std::vector<NExpression*>(); }
+| expr 															{ $$ = new std::vector<NExpression*>(); $$->push_back($1); }
 | call_args TCOMMA expr 										{ $1->push_back($3); }
 ;
 

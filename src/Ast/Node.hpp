@@ -8,10 +8,11 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <llvm/Value.h>
+//#include <llvm/Value.h>
 
 class Node
 {
+public:
 	virtual ~Node() {};
 
 	/*
@@ -19,7 +20,7 @@ class Node
 	 * more information refer: http://en.wikipedia.org/wiki/Virtual_function
 	 * The method codeGen will be used to emit LLVM IR code...
 	 */
-	virtual llvm::Value * codeGen(CodeGenContext& context) { };
+	//virtual llvm::Value * codeGen(CodeGenContext& context) { };
 };
 
 #endif /* NODE_HPP_ */

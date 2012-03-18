@@ -25,7 +25,7 @@ public:
 	 * We will override the codeGen method to emit valid LLVM IR code for float variable
 	 * declaration.
 	 */
-	virtual llvm::Value* codeGen(CodeGenContext& context);
+	//virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 

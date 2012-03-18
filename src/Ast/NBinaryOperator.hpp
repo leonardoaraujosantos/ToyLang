@@ -35,7 +35,7 @@ public:
 	/*
 	 * Override to emmit LLVM IR operations
 	 */
-	virtual llvm::Value* codeGen(CodeGenContext& context);
+	//virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NBINARYOPERATOR_HPP_ */
