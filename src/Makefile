@@ -4,7 +4,7 @@
 # Some enviroment variables
 LIBS = `llvm-config --libs core jit native`
 LDFLAGS = `llvm-config --ldflags`
-CPPFLAGS = `llvm-config --cppflags $(LLVM_MODULES)`
+CPPFLAGS = `llvm-config --cppflags`
 
 # Build all components
 all:	parser_scanner toyLang
