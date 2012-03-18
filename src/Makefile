@@ -18,7 +18,6 @@ parser_scanner:	scanner.l parser.y
 toyLang: main.cpp
 	g++ -o $@ parser.gen.cpp scanner.gen.cpp main.cpp
 
-
 doc:
 	doxygen docs/doxygen.conf
 
