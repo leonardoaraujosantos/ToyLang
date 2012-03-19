@@ -29,7 +29,7 @@
 #include <llvm/ExecutionEngine/JIT.h>
 #include <llvm/Support/raw_ostream.h>
 
-#include "parser.gen.h"
+#include "parser.gen.hpp"
 
 
 /* Compile the AST into a module */

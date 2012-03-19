@@ -2,7 +2,7 @@
 # please refer to the tutorial on http://gnuu.org/2009/09/18/writing-your-own-toy-compiler/all/1/
 
 # Some enviroment variables
-LIBS = `llvm-config --libs core jit native`
+LIBS = `llvm-config --libs core jit native` -ldl
 LDFLAGS = `llvm-config --ldflags`
 CPPFLAGS = `llvm-config --cppflags`
 

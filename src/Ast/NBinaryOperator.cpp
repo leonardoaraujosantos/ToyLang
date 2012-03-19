@@ -8,7 +8,7 @@
 #include "NBinaryOperator.hpp"
 #include "NStatement.hpp"
 #include "NVariableDeclaration.hpp"
-#include "../parser.gen.h"
+#include "../parser.gen.hpp"
 
 Value* NBinaryOperator::codeGen(CodeGenContext& context)
 {
