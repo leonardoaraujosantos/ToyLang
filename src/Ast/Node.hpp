@@ -8,7 +8,23 @@
 #include <iostream>
 #include <vector>
 #include <string>
-//#include <llvm/Value.h>
+
+/*#include "NAssignment.hpp"
+#include "NBinaryOperator.hpp"
+#include "NBlock.hpp"
+#include "NDouble.hpp"
+#include "NExpression.hpp"
+#include "NExpressionStatement.hpp"
+#include "NFunctionDeclaration.hpp"
+#include "NIdentifier.hpp"
+#include "NInteger.hpp"
+#include "NMethodCall.hpp"
+#include "NStatement.hpp"
+#include "NVariableDeclaration.hpp"*/
+
+
+#include "../CodeGenContext.hpp"
+
 
 class Node
 {
@@ -20,7 +36,8 @@ public:
 	 * more information refer: http://en.wikipedia.org/wiki/Virtual_function
 	 * The method codeGen will be used to emit LLVM IR code...
 	 */
-	//virtual llvm::Value * codeGen(CodeGenContext& context) { };
+	virtual llvm::Value *codeGen(CodeGenContext& context) {};
+
 };
 
 #endif /* NODE_HPP_ */

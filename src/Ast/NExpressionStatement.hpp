@@ -11,11 +11,13 @@
 #include "NStatement.hpp"
 #include "NExpression.hpp"
 
+#include "../CodeGenContext.hpp"
+
 class NExpressionStatement: public NStatement {
 public:
 	NExpression& expression;
 	NExpressionStatement(NExpression& expression) : expression(expression) {};
-	//virtual llvm::Value* codeGen(CodeGenContext& context);
+	virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NEXPRESSIONSTATEMENT_H_ */

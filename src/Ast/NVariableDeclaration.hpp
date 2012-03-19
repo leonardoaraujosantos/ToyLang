@@ -10,6 +10,8 @@
 #include "NStatement.hpp"
 #include "NIdentifier.hpp"
 #include "NExpression.hpp"
+#include "NAssignment.hpp"
+
 
 class NVariableDeclaration: public NStatement {
 public:
@@ -42,7 +44,7 @@ public:
 	/*
 	 * Emit LLVM IR variable declaration
 	 */
-	//virtual llvm::Value* codeGen(CodeGenContext& context);
+	virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NVARIABLEDECLARATION_HPP_ */

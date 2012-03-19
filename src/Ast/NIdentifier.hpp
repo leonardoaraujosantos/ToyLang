@@ -6,6 +6,9 @@
 #define NIDENTIFIER_HPP_
 
 #include "NExpression.hpp"
+#include "../CodeGenContext.hpp"
+
+
 class NIdentifier : public NExpression
 {
 public:
@@ -24,7 +27,7 @@ public:
 	 * We will override the codeGen method to emit valid LLVM IR code for identifiers
 	 * declaration. (Can be variables, types, method names etc...)
 	 */
-	//virtual llvm::Value* codeGen(CodeGenContext& context);
+	virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NIDENTIFIER_HPP_ */

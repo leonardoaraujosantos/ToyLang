@@ -6,6 +6,7 @@
 #define NINTEGER_HPP_
 
 #include "NExpression.hpp"
+#include "../CodeGenContext.hpp"
 
 class NInteger : public NExpression
 {
@@ -25,7 +26,7 @@ public:
 	 * We will override the codeGen method to emit valid LLVM IR code for integer variable
 	 * declaration.
 	 */
-	//virtual llvm::Value* codeGen(CodeGenContext& context);
+	virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NINTEGER_HPP_ */

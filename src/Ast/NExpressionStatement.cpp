@@ -7,4 +7,10 @@
 
 #include "NExpressionStatement.hpp"
 
+Value* NExpressionStatement::codeGen(CodeGenContext& context)
+{
+	std::cout << "Generating code for " << typeid(expression).name() << std::endl;
+	return expression.codeGen(context);
+}
+
 

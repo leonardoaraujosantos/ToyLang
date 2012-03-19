@@ -12,3 +12,7 @@ src:	Source code
 
 Ps: Some information on using git through proxys
 http://anilattech.wordpress.com/2011/07/27/git-behind-proxy/
+
+How to test:
+echo 'int do_math(int a) { int x = a * 5 + 3 } do_math(10)' | toyLang
+cat tests/sample.toy | tee /dev/tty | src/toyLang

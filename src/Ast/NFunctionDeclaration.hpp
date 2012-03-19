@@ -14,6 +14,8 @@
 #include "NVariableDeclaration.hpp"
 #include "NBlock.hpp"
 
+#include "../CodeGenContext.hpp"
+
 class NFunctionDeclaration: public NStatement {
 public:
 	const NIdentifier& type;
@@ -26,7 +28,7 @@ public:
 	NFunctionDeclaration(const NIdentifier& type, const NIdentifier& id, const std::vector<NVariableDeclaration*>& arguments, NBlock& block) :
 		type(type), id(id), arguments(arguments), block(block) {};
 
-	//virtual llvm::Value* codeGen(CodeGenContext& context);
+	virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NFUNCTIONDECLARATION_HPP_ */

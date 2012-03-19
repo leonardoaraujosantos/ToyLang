@@ -8,6 +8,8 @@
 #include "NExpression.hpp"
 #include "NStatement.hpp"
 
+#include "../CodeGenContext.hpp"
+
 class NBlock: public NExpression {
 public:
 	/*
@@ -23,7 +25,7 @@ public:
 	/*
 	 * Overrided to emit proper LLVM IR code.
 	 */
-	//virtual llvm::Value* codeGen(CodeGenContext& context);
+	virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NBLOCK_HPP_ */

@@ -8,6 +8,8 @@
 #include "NExpression.hpp"
 #include "NIdentifier.hpp"
 
+#include "../CodeGenContext.hpp"
+
 class NMethodCall : public NExpression
 {
 public:
@@ -34,7 +36,7 @@ public:
 	/*
 	 *	We will override the codeGen to emmit LLVM IR to call some method
 	 */
-	//virtual llvm::Value* codeGen(CodeGenContext& context);
+	virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 #endif /* NMETHODCALL_HPP_ */

@@ -6,6 +6,7 @@
 #define NDOUBLE_HPP_
 
 #include "NExpression.hpp"
+#include "../CodeGenContext.hpp"
 
 class NDouble : public NExpression
 {
@@ -25,7 +26,7 @@ public:
 	 * We will override the codeGen method to emit valid LLVM IR code for float variable
 	 * declaration.
 	 */
-	//virtual llvm::Value* codeGen(CodeGenContext& context);
+	virtual llvm::Value* codeGen(CodeGenContext& context);
 };
 
 

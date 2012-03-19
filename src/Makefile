@@ -15,8 +15,8 @@ parser_scanner:	scanner.l parser.y
 	flex -o scanner.gen.cpp scanner.l
 	
 # Build our toyCompiler ($@ means the target, and $^ means the dependencies)
-toyLang: parser.gen.cpp scanner.gen.cpp main.cpp
-	g++ -o $@ $^
+toyLang: parser.gen.cpp scanner.gen.cpp main.cpp CodeGenContext.cpp Ast/NVariableDeclaration.cpp Ast/NMethodCall.cpp Ast/NInteger.cpp Ast/NIdentifier.cpp Ast/NFunctionDeclaration.cpp Ast/NExpressionStatement.cpp Ast/NDouble.cpp Ast/NBlock.cpp Ast/NBinaryOperator.cpp Ast/NAssignment.cpp
+	g++ -o $@ $^ $(CPPFLAGS) $(LDFLAGS) $(LIBS)
 
 doc:
 	doxygen docs/doxygen.conf
